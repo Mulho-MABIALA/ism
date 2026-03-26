@@ -45,7 +45,6 @@
 
             <!-- TableView -->
             <TableView fx:id="tableEtudiants"
-                       columnResizePolicy="CONSTRAINED_RESIZE_POLICY"
                        VBox.vgrow="ALWAYS"
                        style="-fx-background-radius: 6; -fx-border-color: #bdc3c7;
                               -fx-border-radius: 6;">
