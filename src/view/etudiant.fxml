@@ -26,7 +26,7 @@
 
     <!-- ══════════════════════  CENTRE  ══════════════════════ -->
     <center>
-        <VBox spacing="10">
+        <VBox spacing="10" fillWidth="true">
             <padding><Insets top="12" right="15" bottom="5" left="15"/></padding>
 
             <!-- Barre de recherche -->
@@ -44,16 +44,18 @@
             </HBox>
 
             <!-- TableView -->
-            <TableView fx:id="tableEtudiants" prefHeight="320"
+            <TableView fx:id="tableEtudiants"
+                       columnResizePolicy="CONSTRAINED_RESIZE_POLICY"
+                       VBox.vgrow="ALWAYS"
                        style="-fx-background-radius: 6; -fx-border-color: #bdc3c7;
                               -fx-border-radius: 6;">
                 <columns>
-                    <TableColumn fx:id="colId"      text="ID"       prefWidth="45"/>
-                    <TableColumn fx:id="colNom"     text="Nom"      prefWidth="130"/>
-                    <TableColumn fx:id="colPrenom"  text="Prénom"   prefWidth="130"/>
-                    <TableColumn fx:id="colEmail"   text="Email"    prefWidth="210"/>
-                    <TableColumn fx:id="colFiliere" text="Filière"  prefWidth="150"/>
-                    <TableColumn fx:id="colNiveau"  text="Niveau"   prefWidth="80"/>
+                    <TableColumn fx:id="colId"      text="ID"       prefWidth="50"  minWidth="40"  maxWidth="60"/>
+                    <TableColumn fx:id="colNom"     text="Nom"      prefWidth="150"/>
+                    <TableColumn fx:id="colPrenom"  text="Prénom"   prefWidth="150"/>
+                    <TableColumn fx:id="colEmail"   text="Email"    prefWidth="230"/>
+                    <TableColumn fx:id="colFiliere" text="Filière"  prefWidth="170"/>
+                    <TableColumn fx:id="colNiveau"  text="Niveau"   prefWidth="90"  minWidth="70"  maxWidth="110"/>
                 </columns>
                 <placeholder>
                     <Label text="Aucun étudiant enregistré."
