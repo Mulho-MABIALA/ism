@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DatabaseConnection {
 
-    private static final String URL      = "jdbc:mariadb://127.0.0.1:3306/gestion_etudiants?connectTimeout=5000&socketTimeout=30000";
+    private static final String URL      = "jdbc:mysql://localhost:3306/gestion_etudiants?useSSL=false&serverTimezone=UTC";
     private static final String USER     = "root";
     private static final String PASSWORD = "";  // Modifier selon votre configuration MySQL
 
@@ -17,7 +17,7 @@ public class DatabaseConnection {
     public static Connection getConnection() {
         try {
             if (connection == null || connection.isClosed()) {
-                Class.forName("org.mariadb.jdbc.Driver");
+                Class.forName("com.mysql.cj.jdbc.Driver");
                 connection = DriverManager.getConnection(URL, USER, PASSWORD);
                 System.out.println("Connexion a la base de donnees etablie avec succes.");
             }

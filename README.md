@@ -38,7 +38,7 @@ projet_javafx_gestion_etudiants/
 
 - Java 17 ou plus récent
 - Maven 3.6+
-- **MySQL** ou **MariaDB** (XAMPP inclut MariaDB)
+- **MySQL** (MySQL Server ou XAMPP)
 
 ## Mise en route
 
@@ -63,12 +63,9 @@ mvn compile exec:java -Dexec.mainClass=SetupDatabase
 
 Éditer `src/database/DatabaseConnection.java` selon votre configuration :
 ```java
-private static final String URL      = "jdbc:mariadb://127.0.0.1:3306/gestion_etudiants?connectTimeout=5000";
-private static final String USER     = "root";      // votre utilisateur MySQL/MariaDB
-private static final String PASSWORD = "";           // votre mot de passe (vide par défaut sur XAMPP)
-```
-
-> Le driver `mariadb-java-client` est compatible aussi bien avec **MySQL** qu'avec **MariaDB**.
+private static final String URL      = "jdbc:mysql://localhost:3306/gestion_etudiants?useSSL=false&serverTimezone=UTC";
+private static final String USER     = "root";      // votre utilisateur MySQL
+private static final String PASSWORD = "";           // votre mot de passe MySQL
 
 ### 3. Compiler et lancer
 
@@ -90,6 +87,6 @@ mvn clean javafx:run
 
 - Java 17
 - JavaFX 21
-- JDBC (driver MariaDB 3.3.3 — compatible MySQL et MariaDB)
-- MySQL / MariaDB (XAMPP)
+- JDBC (MySQL Connector/J 8.3.0)
+- MySQL
 - Maven 3

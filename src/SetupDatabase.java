@@ -8,14 +8,14 @@ import java.sql.Statement;
  */
 public class SetupDatabase {
 
-    private static final String URL_NO_DB = "jdbc:mariadb://127.0.0.1:3306/?connectTimeout=5000&socketTimeout=10000";
+    private static final String URL_NO_DB = "jdbc:mysql://localhost:3306/?useSSL=false&serverTimezone=UTC";
     private static final String USER      = "root";
     private static final String PASSWORD  = "";  // Modifier si votre root MySQL a un mot de passe
 
     public static void main(String[] args) {
         System.out.println("=== Initialisation de la base de données ===");
         try {
-            Class.forName("org.mariadb.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             try (Connection conn = DriverManager.getConnection(URL_NO_DB, USER, PASSWORD);
                  Statement  stmt = conn.createStatement()) {
 
