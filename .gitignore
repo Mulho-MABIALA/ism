@@ -1,0 +1,36 @@
+# Dossier de compilation Maven (JAMAIS pousser sur GitHub)
+target/
+
+# Fichiers compilés Java
+*.class
+*.jar
+
+# IDE IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# IDE Eclipse
+.classpath
+.project
+.settings/
+bin/
+
+# IDE VS Code
+.vscode/
+
+# IntelliJ / NetBeans
+nbproject/
+
+# Logs
+*.log
+
+# Fichiers système OS
+.DS_Store
+Thumbs.db
+
+# Fichiers de configuration locaux (mot de passe, etc.)
+*.env
+local.properties
